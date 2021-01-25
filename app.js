@@ -13,33 +13,21 @@
  */
 
 let formContent = document.getElementById("input-value")
-let listContent=document.getElementById("reg-list")
- formContent.innerHTML = printForm()
-listContent.innerHTML=printList()
+let listContent = document.getElementById("reg-list")
+formContent.innerHTML = printForm()
+listContent.innerHTML = printList()
 
-let table=document.getElementById("student-list")
-let registeredStudents=[];
-let nameInput=document.getElementById("name-input")
-let surnameInput=document.getElementById("surname-input")
-let ageInput=document.getElementById("age-input")
-let totalInput=document.getElementById("totalstudent")
-let validName=nameInput.value
-let validsurName=surnameInput.value
-let validAge=ageInput.value
+let table = document.getElementById("student-list")
+let registeredStudents = [];
+let nameInput = document.getElementById("name-input")
+let surnameInput = document.getElementById("surname-input")
+let ageInput = document.getElementById("age-input")
+let totalInput = document.getElementById("totalstudent")
 
+formContent.addEventListener("click", function (pEvent) {
+    if (pEvent.target.tagName.toLowerCase() === "button") {
+        validation2()
+        totalStudent()
 
-
-formContent.addEventListener("click",function (pEvent) {
-    if (pEvent.target.tagName.toLowerCase()==="button") {
-        takeValue()
-      totalStudent()
-     
     }
 })
-
-
-
-
- 
-
-

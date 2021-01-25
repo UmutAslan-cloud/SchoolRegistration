@@ -1,17 +1,20 @@
+/**
+ * Bu fonksiyonumuz verileri Ui a yazdiriyor.
+ */
 function printForm() {
     return `
     <div><p>Student Info</p></div>
     <div class="text-input">
         <label for="name">Name</label>
-        <input id="name-input" type="text" placeholder="Please write a name">
+        <input id="name-input" type="text" placeholder="Name">
     </div>
     <div class="text-input">
         <label for="surname">Surname</label>
-        <input id="surname-input" type="text" placeholder="Please write a surname">
+        <input id="surname-input" type="text" placeholder="Surname">
     </div>
     <div class="text-input">
         <label for="age">Age</label>
-        <input id="age-input" type="text" placeholder="Please write a number">
+        <input id="age-input" type="text" placeholder="Age">
         
     </div>
     <div>
@@ -38,7 +41,9 @@ function printList() {
      <input  id="totalstudent"type="text" value="0">
  </div>`
 }
-
+/**
+ * Bu fonksiyonumuz ise eklenen verilerin olusturdugu listeyi ekrana yazdiriyor
+ */
 function printListContent() {
     let content = registeredStudents.map(function (student, index) {
         return `
@@ -53,18 +58,22 @@ function printListContent() {
     table.innerHTML = content
     removeStudent()
 }
-
-function takeValue() { 
+/**
+ * Bu fonksiyonumuz ise girilen degerleri aliyor ve listeyi guncelleyip tekrar yazdiriyor
+ */
+function takeValue() {
     registeredStudents.push({
         "name": nameInput.value,
         "surname": surnameInput.value,
         "age": Number(ageInput.value)
     })
-    
-     printListContent()
-    
-}
 
+    printListContent()
+
+}
+/**
+ * Bu fonksiyonumuz ise listemizden veriyi siliyor ve listeyi guncel haliyle tekrar yazdiriyor
+ */
 let removeStudent = () => {
     registeredStudents.map((pdelete, index) => {
         document.getElementById(`${index}`).addEventListener("click", function (e) {
@@ -75,10 +84,24 @@ let removeStudent = () => {
     })
 }
 
-
+/**
+ * Toplam ogrenci sayisini bulan fonksiyonumuz
+ */
 function totalStudent() {
     let result = registeredStudents.length
     return totalInput.value = result
 }
-
-
+/**
+ * Bu da inputlarin degerlereini sorgulayarak kullaniciya uyari mesaji gonderiyor
+ */
+function validation2() {
+    if (nameInput.value == null || nameInput.value == "") {
+        alert("Name can't be blank");
+        return false;
+    } else if (surnameInput.value == null || surnameInput.value == "") {
+        alert("Surname can't be blank");
+        return false;
+    } else {
+        takeValue()
+    }
+}

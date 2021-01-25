@@ -1,7 +1,14 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Imbue', serif;
+    font-family: 'Roboto Mono', monospace;
+
+}
+
+body {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(70, 121, 9, 1) 23%, rgba(0, 212, 255, 1) 100%);
 }
 
 main {
@@ -21,8 +28,8 @@ main {
 #input-value {
     border: 2px solid black;
     border-radius: 10px;
-    box-shadow: 5px 5px;
-    background-color: burlywood;
+    background-color: black;
+    color: turquoise;
     width: 15vw;
     height: 50vh;
     display: flex;
@@ -51,24 +58,26 @@ th {
 
 #totalstudent {
     text-align: right;
-    
+
 }
-.total{
+
+.total {
     font-weight: bold;
 }
+
 #input-value :last-child {
     display: flex;
     justify-content: center;
-    margin-top: 25px;
+
 }
 
 #input-value :last-child button {
     width: 5vw;
-    background-color: rgb(76, 76, 201);
-    color: white;
+    background-color: white;
+    color: black;
 }
 
 td button {
-    background-color: rgb(76, 76, 201);
-    color: white;
+    background-color: white;
+    color: black;
 }
